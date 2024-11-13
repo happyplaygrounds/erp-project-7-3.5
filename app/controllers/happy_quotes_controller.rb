@@ -188,7 +188,7 @@ include Reminder
   end
 
   def copy
-    @happyquote = HappyQuote.includes(:happy_quote_lines).order("happy_quote_lines.id asc").find(params[:happy_quote_id])
+    @happyquote = HappyQuote.includes(:happy_quote_lines).order("happy_quote_lines.position asc").find(params[:happy_quote_id])
     @happyquoteclone = @happyquote.clone   # works for line items
     @happyquotedup = @happyquote.dup   # works for header
     puts "@happyquote number", @happyquote.number
